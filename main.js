@@ -9,7 +9,7 @@ for (let customer of customers){
 
     let customerImg = document.createElement('img');
     customerImg.src = customer.picture.medium;
-    customerImg.classList.add("customerImg")
+    customerImg.classList.add("customerImg");
     // apply style to a class in css first, then add that class to the element with JS
     customerCard.appendChild(customerImg);
 
@@ -28,13 +28,17 @@ for (let customer of customers){
     let customerState = document.createElement('p');
     customerState.innerText = `${customer.location.city} ${customer.location.state} ${customer.location.postcode}`;
     customerCard.appendChild(customerState);
-
-    let formattedDate = moment(customer.registered.date).format("MM, DD, YYYY")
+//dates
+    let formattedDate = moment(customer.registered.date).format("MMM DD, YYYY")
+    let formattedDob = moment(customer.dob.date).format("MMM DD, YYYY")
 
     let customerDob = document.createElement('p');
-    customerDob.innerText = `D.O.B. ${customer.dob.date}`;
+    customerDob.innerText = `DOB: ${formattedDob}`;
     customerCard.appendChild(customerDob);
 
+    let customerDate = document.createElement('p');
+    customerDate.innerText = `Customer since: ${formattedDate}`;
+    customerCard.appendChild(customerDate);
 
     customerProfiles.appendChild(customerCard);
 }

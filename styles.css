@@ -14,4 +14,9 @@
 
 .customerImg {
     border-radius: 50px;
+    margin: 30px;
+}
+
+.paragraph {
+    justify-content: center;
 }
