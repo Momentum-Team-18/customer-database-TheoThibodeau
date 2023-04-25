@@ -1,0 +1,4 @@
+#customerProfiles {
+    display: flex;
+    flex-wrap: wrap;
+}
