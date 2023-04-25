@@ -1,4 +1,17 @@
 #customerProfiles {
     display: flex;
     flex-wrap: wrap;
+    background-color: #f4a460;
+    justify-content: center;
+   }
+ 
+#customerCard {
+    margin: 25px;
+    padding: 5px;
+    background-color: aqua;
+    justify-content: center;
+}
+
+.customerImg {
+    border-radius: 50px;
 }

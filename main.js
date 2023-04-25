@@ -6,17 +6,37 @@ console.log(customers);
 
 for (let customer of customers){
     let customerCard = document.createElement('div');
-    // created the card for this customer
+
+    let customerImg = document.createElement('img');
+    customerImg.src = customer.picture.medium;
+    customerImg.classList.add("customerImg")
+    // apply style to a class in css first, then add that class to the element with JS
+    customerCard.appendChild(customerImg);
+
     let customerName = document.createElement('h2');
     customerName.innerText = `${customer.name.first} ${customer.name.last}`;
     customerCard.appendChild(customerName);
-    // added the name of the customer to the card
+
     let customerEmail = document.createElement('p');
     customerEmail.innerText = customer.email;
     customerCard.appendChild(customerEmail);
-    // added the email of the customer to the card
+
+    let customerAddress = document.createElement('p');
+    customerAddress.innerText = `${customer.location.street.number} ${customer.location.street.name}`;
+    customerCard.appendChild(customerAddress);
+    
+    let customerState = document.createElement('p');
+    customerState.innerText = `${customer.location.city} ${customer.location.state} ${customer.location.postcode}`;
+    customerCard.appendChild(customerState);
+
+    let formattedDate = moment(customer.registered.date).format("MM, DD, YYYY")
+
+    let customerDob = document.createElement('p');
+    customerDob.innerText = `D.O.B. ${customer.dob.date}`;
+    customerCard.appendChild(customerDob);
+
+
     customerProfiles.appendChild(customerCard);
-    // added the customer card to the customer profiles container
 }
 
 
