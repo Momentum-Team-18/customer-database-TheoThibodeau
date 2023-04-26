@@ -1,3 +1,7 @@
+* {
+    cursor: pointer;
+}
+
 #customerProfiles {
     display: flex;
     flex-wrap: wrap;
@@ -26,4 +30,3 @@
 .customerEmail {
     color: gray;
 }
-
